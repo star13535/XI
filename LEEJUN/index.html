@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>북오산자이 리버블시티 - 공식홍보관</title>
     
-    <link rel="icon" href="img/logo.png" type="image/png">
+    <link rel="icon" href="../img/logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
 
     <style>
@@ -77,38 +77,19 @@
 
         /* [PC 환경 전용 수정] */
         @media (min-width: 1024px) {
-            
-            body { 
-        padding-bottom: 0; /* PC에선 버튼이 본문을 가리지 않으므로 여백 제거 */
-    }
-            
-            /* 명함은 왼쪽 고정 (기존 유지) */
+            body { padding-bottom: 0; }
             .business-card { 
                 position: fixed; top: 50%; left: 40px; transform: translateY(-50%); 
                 width: 320px; border: 2px solid #003a78; border-radius: 20px; 
                 z-index: 1100; box-shadow: 10px 10px 30px rgba(0,0,0,0.15); 
             }
-        
             .tab-btn { font-size: 16px; }
-        
-            /* 하단 버튼을 오른쪽 아래로 이동 */
             .fixed-footer-call { 
-                bottom: 40px;           /* 바닥에서 띄움 */
-                right: 40px;            /* 오른쪽에서 40px 띄움 */
-                left: auto;             /* 기존 왼쪽 정렬 해제 */
-                transform: none;        /* 기존 중앙 정렬 해제 */
-                width: auto;            /* 너비 자동 */
-                min-width: 250px;       /* 적당한 너비 유지 */
-                font-size: 20px; 
-                padding: 16px 35px;
-                border-radius: 50px;    /* 둥근 버튼 유지 */
+                bottom: 40px; right: 40px; left: auto; transform: none; 
+                width: auto; min-width: 250px; font-size: 20px; 
+                padding: 16px 35px; border-radius: 50px; 
             }
-        
-            /* 마우스 올렸을 때 살짝 위로 뜨는 효과 */
-            .fixed-footer-call:hover { 
-                transform: translateY(-5px); 
-                box-shadow: 0 15px 35px rgba(0,0,0,0.4); 
-            }
+            .fixed-footer-call:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
         }
     </style>
 </head>
@@ -116,8 +97,8 @@
 
     <div class="business-card">
         <div class="card-container">
-            <img src="img/명함.jpg" alt="분양상담사 명함">
-            <a href="tel:01033230322" class="card-btn-call">📞 상담 바로 연결</a>
+            <img src="../img/LEEJUN.jpg" alt="분양상담사 명함">
+            <a href="tel:01086715327" class="card-btn-call">📞 상담 바로 연결</a>
         </div>
     </div>
 
@@ -137,32 +118,31 @@
     </div>
 
     <div id="tab1" class="tab-content active">
-        <img src="img/intro.png" alt="사업개요">
-        <img src="img/2.png" alt="사업개요 상세">
-        <img src="img/5.png" alt="사업개요">
-        <img src="img/6.png" alt="사업개요">
-        <img src="img/9.png" alt="사업개요">
-        <img src="img/12.png" alt="사업개요">
-        <img src="img/10.png" alt="사업개요 상세">
-        <img src="img/11.png" alt="사업개요 상세">
-
+        <img src="../img/intro.png" alt="사업개요">
+        <img src="../img/2.png" alt="사업개요 상세">
+        <img src="../img/5.png" alt="사업개요">
+        <img src="../img/6.png" alt="사업개요">
+        <img src="../img/9.png" alt="사업개요">
+        <img src="../img/12.png" alt="사업개요">
+        <img src="../img/10.png" alt="사업개요 상세">
+        <img src="../img/11.png" alt="사업개요 상세">
     </div>
+
     <div id="tab2" class="tab-content">
-        <img src="img/13.png" alt="입지안내">
-        <img src="img/15.png" alt="교통망">
-        <img src="img/17.png" alt="사업개요 상세">
-        <img src="img/18.png" alt="사업개요 상세">
-
+        <img src="../img/13.png" alt="입지안내">
+        <img src="../img/15.png" alt="교통망">
+        <img src="../img/17.png" alt="사업개요 상세">
+        <img src="../img/18.png" alt="사업개요 상세">
     </div>
-    <div id="tab3" class="tab-content">
-        <img src="img/26.png" alt="프리미엄1">
-        <img src="img/27.png" alt="프리미엄2">
-        <img src="img/29.png" alt="프리미엄3">
-        <img src="img/30.png" alt="프리미엄4">
-        <img src="img/31.png" alt="프리미엄5">
-        <img src="img/32.png" alt="프리미엄6">
-        <img src="img/33.png" alt="프리미엄7">
 
+    <div id="tab3" class="tab-content">
+        <img src="../img/26.png" alt="프리미엄1">
+        <img src="../img/27.png" alt="프리미엄2">
+        <img src="../img/29.png" alt="프리미엄3">
+        <img src="../img/30.png" alt="프리미엄4">
+        <img src="../img/31.png" alt="프리미엄5">
+        <img src="../img/32.png" alt="프리미엄6">
+        <img src="../img/33.png" alt="프리미엄7">
     </div>
 
     <div id="tab4" class="tab-content">
@@ -186,42 +166,40 @@
             <div id="size99" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type99B')">99B</button></div></div>
             <div id="size127" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type127P')">127P</button></div></div>
 
-            <div id="type59A" class="sub-tab-content active"><img src="img/34.png" alt="59A"></div>
-            <div id="type74A" class="sub-tab-content"><img src="img/39.png" alt="74A"></div>
-            <div id="type74B" class="sub-tab-content"><img src="img/42.png" alt="74B"></div>
-            <div id="type74C" class="sub-tab-content"><img src="img/45.png" alt="74C"></div>
-            <div id="type84A" class="sub-tab-content"><img src="img/48.png" alt="84A"></div>
-            <div id="type84B" class="sub-tab-content"><img src="img/51.png" alt="84B"></div>
-            <div id="type84D" class="sub-tab-content"><img src="img/54.png" alt="84D"></div>
-            <div id="type99B" class="sub-tab-content"><img src="img/56.png" alt="99B"></div>
-            <div id="type127P" class="sub-tab-content"><img src="img/61.png" alt="127P"></div>
+            <div id="type59A" class="sub-tab-content active"><img src="../img/34.png" alt="59A"></div>
+            <div id="type74A" class="sub-tab-content"><img src="../img/39.png" alt="74A"></div>
+            <div id="type74B" class="sub-tab-content"><img src="../img/42.png" alt="74B"></div>
+            <div id="type74C" class="sub-tab-content"><img src="../img/45.png" alt="74C"></div>
+            <div id="type84A" class="sub-tab-content"><img src="../img/48.png" alt="84A"></div>
+            <div id="type84B" class="sub-tab-content"><img src="../img/51.png" alt="84B"></div>
+            <div id="type84D" class="sub-tab-content"><img src="../img/54.png" alt="84D"></div>
+            <div id="type99B" class="sub-tab-content"><img src="../img/56.png" alt="99B"></div>
+            <div id="type127P" class="sub-tab-content"><img src="../img/61.png" alt="127P"></div>
         </div>
 
         <div id="photo-view" class="mode-content">
-            <img src="img/a.jpg" alt="실사진1">
-            <img src="img/b.jpg" alt="실사진2">
-            <img src="img/c.jpg" alt="실사진3">
-            <img src="img/d.jpg" alt="실사진4">
-            <img src="img/e.jpg" alt="실사진5">
-            <img src="img/f.jpg" alt="실사진6">
-            <img src="img/g.jpg" alt="실사진7">
-            <img src="img/h.jpg" alt="실사진8">
-            <img src="img/i.jpg" alt="실사진9">
-            <img src="img/j.jpg" alt="실사진10">
-            <img src="img/k.jpg" alt="실사진11">
-            <img src="img/l.jpg" alt="실사진12">
-            
+            <img src="../img/a.jpg" alt="실사진1">
+            <img src="../img/b.jpg" alt="실사진2">
+            <img src="../img/c.jpg" alt="실사진3">
+            <img src="../img/d.jpg" alt="실사진4">
+            <img src="../img/e.jpg" alt="실사진5">
+            <img src="../img/f.jpg" alt="실사진6">
+            <img src="../img/g.jpg" alt="실사진7">
+            <img src="../img/h.jpg" alt="실사진8">
+            <img src="../img/i.jpg" alt="실사진9">
+            <img src="../img/j.jpg" alt="실사진10">
+            <img src="../img/k.jpg" alt="실사진11">
+            <img src="../img/l.jpg" alt="실사진12">
         </div>
     </div>
 
     <div id="tab5" class="tab-content">
-        <img src="img/69.png" alt="분양가 안내1">
-        <img src="img/70.png" alt="분양가 안내2">
-        <img src="img/84.png" alt="분양가 안내3">
-
+        <img src="../img/69.png" alt="분양가 안내1">
+        <img src="../img/70.png" alt="분양가 안내2">
+        <img src="../img/84.png" alt="분양가 안내3">
     </div>
 
-    <a href="tel:01033230322" class="fixed-footer-call">📞 010-3323-0322 상담 연결</a>
+    <a href="tel:01086715327" class="fixed-footer-call">📞 010-8671-5327 상담 연결</a>
 
     <script>
         function openTab(evt, tabName) {
