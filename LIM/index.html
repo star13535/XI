@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>북오산자이 리버블시티 - 임세은 팀장</title>
+    
+    <link rel="icon" href="../img/logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* [공통 설정] */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f8f9fa; text-align: center; padding-bottom: 100px; }
+        img { width: 100%; height: auto; display: block; vertical-align: middle; }
+
+        /* [1. 명함 섹션] */
+        .business-card { width: 100%; background: #fff; padding: 30px 20px; border-bottom: 1px solid #eee; }
+        .card-container { width: 100%; max-width: 330px; margin: 0 auto; }
+        .card-container img { border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+        .card-btn-call { display: block; margin-top: 15px; padding: 12px 0; background: #003a78; color: #fff; text-decoration: none; border-radius: 8px; font-size: 16px; font-weight: bold; }
+
+        /* [2. 타이틀 & 배너] */
+        .main-title { background-color: #fff; padding: 40px 20px; }
+        .main-title h2 { font-size: 28px; color: #003a78; font-weight: 700; letter-spacing: -1.5px; }
+        .main-title p { font-size: 16px; color: #666; margin-top: 10px; }
+        .point-banner { background: #003a78; color: #fff; padding: 15px; font-size: 18px; font-weight: bold; }
+
+        /* [3. 메인 탭 메뉴] */
+        .tab-menu { display: flex; flex-wrap: wrap; justify-content: center; background: #fff; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid #003a78; }
+        .tab-btn { flex: 1; min-width: 20%; padding: 15px 5px; border: none; background: #fff; font-size: 14px; font-weight: bold; color: #666; cursor: pointer; border-right: 1px solid #eee; }
+        .tab-btn.active { background: #003a78; color: #fff; }
+
+        /* [4. 탭 콘텐츠 공통] */
+        .tab-content { display: none; width: 100%; max-width: 1100px; margin: 0 auto; background: #fff; }
+        .tab-content.active { display: block; }
+
+        /* [5. 세대안내 내부 스타일] */
+        .view-mode-selector { display: flex; background: #eee; margin: 15px; border-radius: 8px; padding: 5px; }
+        .mode-btn { flex: 1; padding: 12px; border: none; background: none; font-weight: bold; color: #888; cursor: pointer; border-radius: 6px; }
+        .mode-btn.active { background: #fff; color: #003a78; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .mode-content { display: none; }
+        .mode-content.active { display: block; }
+
+        .size-filter { display: flex; gap: 5px; padding: 15px; overflow-x: auto; background: #fff; border-bottom: 1px solid #eee; }
+        .filter-btn { flex: 0 0 75px; padding: 8px; border: 1px solid #003a78; background: #fff; color: #003a78; border-radius: 4px; font-weight: bold; cursor: pointer; }
+        .filter-btn.active { background: #003a78; color: #fff; }
+
+        .type-group { display: none; padding: 15px; background: #f8f9fa; border-bottom: 1px solid #eee; }
+        .type-group.active { display: block; }
+        .sub-tab-menu { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .sub-tab-btn { padding: 6px 18px; border-radius: 20px; border: 1px solid #ccc; background: #fff; font-size: 13px; font-weight: bold; cursor: pointer; }
+        .sub-tab-btn.active { background: #444; color: #fff; border-color: #444; }
+        .sub-tab-content { display: none; }
+        .sub-tab-content.active { display: block; }
+
+        /* [6. 하단 고정 버튼 - 알약 모양] */
+        .fixed-footer-call {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            min-width: 300px;
+            background: linear-gradient(90deg, #003a78, #0056b3);
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 9999;
+            text-align: center;
+            border-radius: 50px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            transition: all 0.3s ease;
+        }
+
+        /* [PC 환경 전용 수정] */
+        @media (min-width: 1024px) {
+            body { padding-bottom: 0; }
+            .business-card { 
+                position: fixed; top: 50%; left: 40px; transform: translateY(-50%); 
+                width: 320px; border: 2px solid #003a78; border-radius: 20px; 
+                z-index: 1100; box-shadow: 10px 10px 30px rgba(0,0,0,0.15); 
+            }
+            .tab-btn { font-size: 16px; }
+            .fixed-footer-call { 
+                bottom: 40px; right: 40px; left: auto; transform: none; 
+                width: auto; min-width: 250px; font-size: 20px; 
+                padding: 16px 35px; border-radius: 50px; 
+            }
+            .fixed-footer-call:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="business-card">
+        <div class="card-container">
+            <img src="../img/LIM.JPG" alt="분양상담사 명함">
+            <a href="tel:01062488363" class="card-btn-call">📞 상담 바로 연결</a>
+        </div>
+    </div>
+
+    <div class="main-title">
+        <h2>북오산자이 리버블시티</h2>
+        <p>모델하우스 방문 예약 및 선착순 분양 안내</p>
+    </div>
+
+    <div class="point-banner">🚀 잔여세대 선착순 동·호 지정 계약 중</div>
+
+    <div class="tab-menu">
+        <button class="tab-btn active" onclick="openTab(event, 'tab1')">사업개요</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab2')">입지안내</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab3')">프리미엄</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab4')">세대안내</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab5')">분양가</button>
+    </div>
+
+    <div id="tab1" class="tab-content active">
+        <img src="../img/intro.png" alt="사업개요">
+        <img src="../img/2.png" alt="사업개요 상세">
+        <img src="../img/5.png" alt="사업개요">
+        <img src="../img/6.png" alt="사업개요">
+        <img src="../img/9.png" alt="사업개요">
+        <img src="../img/12.png" alt="사업개요">
+        <img src="../img/10.png" alt="사업개요 상세">
+        <img src="../img/11.png" alt="사업개요 상세">
+    </div>
+
+    <div id="tab2" class="tab-content">
+        <img src="../img/13.png" alt="입지안내">
+        <img src="../img/15.png" alt="교통망">
+        <img src="../img/17.png" alt="사업개요 상세">
+        <img src="../img/18.png" alt="사업개요 상세">
+    </div>
+
+    <div id="tab3" class="tab-content">
+        <img src="../img/26.png" alt="프리미엄1">
+        <img src="../img/27.png" alt="프리미엄2">
+        <img src="../img/29.png" alt="프리미엄3">
+        <img src="../img/30.png" alt="프리미엄4">
+        <img src="../img/31.png" alt="프리미엄5">
+        <img src="../img/32.png" alt="프리미엄6">
+        <img src="../img/33.png" alt="프리미엄7">
+    </div>
+
+    <div id="tab4" class="tab-content">
+        <div class="view-mode-selector">
+            <button class="mode-btn active" onclick="changeViewMode(event, 'plan-view')">📐 평면도 안내</button>
+            <button class="mode-btn" onclick="changeViewMode(event, 'photo-view')">📸 모델하우스 실사진</button>
+        </div>
+
+        <div id="plan-view" class="mode-content active">
+            <div class="size-filter">
+                <button class="filter-btn active" onclick="filterSize(event, 'size59')">59㎡</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size74')">74㎡</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size84')">84㎡</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size99')">99㎡</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size127')">127㎡</button>
+            </div>
+
+            <div id="size59" class="type-group active"><div class="sub-tab-menu"><button class="sub-tab-btn active" onclick="openSubTab(event, 'type59A')">59A</button></div></div>
+            <div id="size74" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type74A')">74A</button><button class="sub-tab-btn" onclick="openSubTab(event, 'type74B')">74B</button><button class="sub-tab-btn" onclick="openSubTab(event, 'type74C')">74C</button></div></div>
+            <div id="size84" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84A')">84A</button><button class="sub-tab-btn" onclick="openSubTab(event, 'type84B')">84B</button><button class="sub-tab-btn" onclick="openSubTab(event, 'type84D')">84D</button></div></div>
+            <div id="size99" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type99B')">99B</button></div></div>
+    은 팀장 상담 바로 연결</a>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.classList.add("active");
+            window.scrollTo(0, 0);
+            setTimeout(function() {
+                const menu = document.querySelector('.tab-menu');
+                menu.scrollIntoView({ behavior: 'auto', block: 'start' });
+            }, 50);
+        }
+
+        function changeViewMode(evt, modeId) {
+            const contents = document.getElementsByClassName('mode-content');
+            for (let content of contents) { content.classList.remove('active'); }
+            const btns = document.getElementsByClassName('mode-btn');
+            for (let btn of btns) { btn.classList.remove('active'); }
+            document.getElementById(modeId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        function filterSize(evt, sizeId) {
+            const groups = document.getElementsByClassName('type-group');
+            for (let group of groups) { group.classList.remove('active'); }
+            const filterBtns = document.getElementsByClassName('filter-btn');
+            for (let btn of filterBtns) { btn.classList.remove('active'); }
+            document.getElementById(sizeId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+            const firstSubBtn = document.getElementById(sizeId).querySelector('.sub-tab-btn');
+            if(firstSubBtn) firstSubBtn.click();
+        }
+
+        function openSubTab(evt, subTabName) {
+            const subcontents = document.getElementsByClassName("sub-tab-content");
+            for (let content of subcontents) { content.style.display = "none"; }
+            const subbtns = document.getElementsByClassName("sub-tab-btn");
+            for (let btn of subbtns) { btn.classList.remove("active"); }
+            document.getElementById(subTabName).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
